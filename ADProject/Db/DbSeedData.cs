@@ -55,9 +55,9 @@ namespace ADProject.DbSeeder
 
             db.Groups.Add(new Group
             {
-                GroupName = "Hololive Official",
-                GroupPhoto = "https://user-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/1369026/124086_244660.png",
-                Description = "Official hololive group",
+                GroupName = "Japanese Food Guide",
+                GroupPhoto = "https://www.ampersandtravel.com/media/843058/header.jpg?mode=crop&width=1485",
+                Description = "Recipes that orginated at Japan",
                 DateCreated = new DateTime(2008, 5, 1, 8, 30, 52),
                 IsPublished = true,
                 UsersGroups = ug
@@ -87,9 +87,142 @@ namespace ADProject.DbSeeder
 
             ApplicationUser user = db.Users.FirstOrDefault(user => user.NormalizedUserName.Equals("AK"));
 
-            List<RecipeIngredient> recipeIngredient = new List<RecipeIngredient>();
+            List<RecipeIngredient> recipeIngredientpancake = new List<RecipeIngredient>();
 
-            
+
+            recipeIngredientpancake.Add(new RecipeIngredient
+            {
+                Ingredient = "unsweetened nut or coconut milk",
+                Quantity = 1,
+                UnitOfMeasurement = "cup"
+            });
+
+            recipeIngredientpancake.Add(new RecipeIngredient
+            {
+                Ingredient = "apple cider vinegar",
+                Quantity = .5,
+                UnitOfMeasurement = "tsp"
+            });
+
+            recipeIngredientpancake.Add(new RecipeIngredient
+            {
+                Ingredient = "pumpkin puree",
+                Quantity = .75,
+                UnitOfMeasurement = "cup"
+            });
+
+            recipeIngredientpancake.Add(new RecipeIngredient
+            {
+                Ingredient = "maple syrup",
+                Quantity = 3,
+                UnitOfMeasurement = "tbsp"
+            });
+
+            recipeIngredientpancake.Add(new RecipeIngredient
+            {
+                Ingredient = "peanut butter",
+                Quantity = 1,
+                UnitOfMeasurement = "tbsp"
+            });
+
+            recipeIngredientpancake.Add(new RecipeIngredient
+            {
+                Ingredient = "vanilla extract",
+                Quantity = 1,
+                UnitOfMeasurement = "tsp"
+            });
+
+            recipeIngredientpancake.Add(new RecipeIngredient
+            {
+                Ingredient = "buckwheat flour ",
+                Quantity = 1,
+                UnitOfMeasurement = "cup"
+            });
+            recipeIngredientpancake.Add(new RecipeIngredient
+            {
+                Ingredient = "almond flour",
+                Quantity = 2,
+                UnitOfMeasurement = "tbsp"
+            });
+            recipeIngredientpancake.Add(new RecipeIngredient
+            {
+                Ingredient = "baking powder",
+                Quantity = 2,
+                UnitOfMeasurement = "tbsp"
+            });
+            recipeIngredientpancake.Add(new RecipeIngredient
+            {
+                Ingredient = "nutmeg,salt,ginger- each",
+                Quantity = 1,
+                UnitOfMeasurement = "pinch"
+            });
+
+            List<RecipeStep> recipeStepspancake = new List<RecipeStep>();
+            recipeStepspancake.Add(new RecipeStep
+            {
+                StepNumber = 1,
+                TextInstructions = "Pour the cup of unsweetened milk and apple cider vinegar in a large bowl. Let it sit for 5 minutes.",
+               
+            });
+            recipeStepspancake.Add(new RecipeStep
+            {
+                StepNumber = 2,
+                TextInstructions = "Add the rest of the ingredients, in order, stirring in between the wet and dry ingredients to make sure they are evenly distributed--especially the peanut butter. ",
+                MediaFileUrl = "https://foodscape.vanillaplummedia.com/wp-content/uploads/2015/10/pumpkin-peanut-butter-pancakes-healthy-vegan-1024x732.jpg"
+            });
+            recipeStepspancake.Add(new RecipeStep
+            {
+                StepNumber = 3,
+                TextInstructions = "Heat the skillet to a medium-high heat. The higher the temperature, the higher the pancake will be, just make sure it doesn't burn! If it burns, it's too hot.",
+                MediaFileUrl = "https://foodscape.vanillaplummedia.com/wp-content/uploads/2015/10/pumpkin-peanut-butter-pancakes-dairy-free-egg-free-1024x678.jpg"
+            });
+            recipeStepspancake.Add(new RecipeStep
+            {
+                StepNumber = 4,
+                TextInstructions = "Pour on skillet in desired shape and cook on both sides-spread out with a spoon if necessary. Repeat.",
+                MediaFileUrl = "https://foodscape.vanillaplummedia.com/wp-content/uploads/2015/10/pumpkin-peanut-butter-pancakes.jpg"
+            });
+
+            List<RecipeTag> recipeTagpancake = new List<RecipeTag>();
+
+            recipeTagpancake.Add(new RecipeTag
+            {
+                IsAllergenTag = false,
+                Tag = new Tag
+                {
+                    TagName = "pancake",
+                    Warning = ""
+                }
+            });
+            recipeTagpancake.Add(new RecipeTag
+            {
+                IsAllergenTag = false,
+                Tag = new Tag
+                {
+                    TagName = "pumkin",
+                    Warning = ""
+                }
+            });
+
+
+            db.Recipes.Add(new Recipe
+            {
+                UserId = user.Id,
+                Title = "PUMPKIN PEANUT BUTTER PANCAKES",
+                Description = "These are drool-worthy!",
+                DateCreated = new DateTime(2019, 6, 3, 8, 30, 52),
+                DurationInMins = 40,
+                Calories = 500,
+                IsPublished = true,
+                MainMediaUrl = "https://foodscape.vanillaplummedia.com/wp-content/uploads/2015/10/pumpkin-peanut-butter-pancakes-buckwheat-gluten-free-1024x1024.jpg",
+                RecipeIngredients = recipeIngredientpancake,
+                RecipeSteps = recipeStepspancake,
+                RecipeTags = recipeTagpancake
+            });
+
+            db.SaveChanges();
+
+
 
             List<RecipeIngredient> recipeIngredient3 = new List<RecipeIngredient>();
 
@@ -284,6 +417,243 @@ namespace ADProject.DbSeeder
             });
 
             db.SaveChanges();
+            ApplicationUser user = db.Users.FirstOrDefault(user => user.NormalizedUserName.Equals("JC"));
+
+            List<RecipeIngredient> recipeIngredient = new List<RecipeIngredient>();
+
+
+            recipeIngredient.Add(new RecipeIngredient
+            {
+                Ingredient = "flaxseeds",
+                Quantity = 1,
+                UnitOfMeasurement = "tbsp"
+            });
+
+            recipeIngredient.Add(new RecipeIngredient
+            {
+                Ingredient = "hempseed",
+                Quantity = 1,
+                UnitOfMeasurement = "tbsp"
+            });
+
+            recipeIngredient.Add(new RecipeIngredient
+            {
+                Ingredient = "banana",
+                Quantity = 1,
+                UnitOfMeasurement = "banana"
+            });
+
+            recipeIngredient.Add(new RecipeIngredient
+            {
+                Ingredient = "fresh orange juice",
+                Quantity = 2,
+                UnitOfMeasurement = "cups"
+            });
+
+            recipeIngredient.Add(new RecipeIngredient
+            {
+                Ingredient = "sunwarrior protien powder",
+                Quantity = 1,
+                UnitOfMeasurement = "scoop"
+            });
+
+            recipeIngredient.Add(new RecipeIngredient
+            {
+                Ingredient = "frozen cranberries",
+                Quantity = .5,
+                UnitOfMeasurement = "cup"
+            });
+
+            recipeIngredient.Add(new RecipeIngredient
+            {
+                Ingredient = "bee pollen",
+                Quantity = 1,
+                UnitOfMeasurement = "tsp"
+            });
+            recipeIngredient.Add(new RecipeIngredient
+            {
+                Ingredient = "honey",
+                Quantity = 2,
+                UnitOfMeasurement = "tbsp"
+            });
+           
+            List<RecipeStep> recipeSteps = new List<RecipeStep>();
+            recipeSteps.Add(new RecipeStep
+            {
+                StepNumber = 1,
+                TextInstructions = "Blend and pour!",
+                MediaFileUrl= "https://foodscape.vanillaplummedia.com/wp-content/uploads/2014/11/top-view-smoothie-logo.jpg"
+            });
+           
+            List<RecipeTag> recipeTag = new List<RecipeTag>();
+
+            recipeTag.Add(new RecipeTag
+            {
+                IsAllergenTag = false,
+                Tag = new Tag
+                {
+                    TagName = "smoothie",
+                    Warning = ""
+                }
+            });
+            recipeTag.Add(new RecipeTag
+            {
+                IsAllergenTag = false,
+                Tag = new Tag
+                {
+                    TagName = "orange",
+                    Warning = ""
+                }
+            });
+            recipeTag.Add(new RecipeTag
+            {
+                IsAllergenTag = false,
+                Tag = new Tag
+                {
+                    TagName = "cranberry",
+                    Warning = ""
+                }
+            });
+
+
+            db.Recipes.Add(new Recipe
+            {
+                UserId = user.Id,
+                Title = "Cranberry Orange Smoothie",
+                Description = "Healthy and energtic",
+                DateCreated = new DateTime(2019, 6, 3, 8, 30, 52),
+                DurationInMins = 40,
+                Calories = 500,
+                IsPublished = true,
+                MainMediaUrl = "https://foodscape.vanillaplummedia.com/wp-content/uploads/2014/11/cranberry-orange-smoothie-with-logo.jpg",
+                RecipeIngredients = recipeIngredient,
+                RecipeSteps = recipeSteps,
+                RecipeTags = recipeTag
+            });
+
+            db.SaveChanges();
+
+            List<RecipeIngredient> recipeIngredient1= new List<RecipeIngredient>();
+
+
+            recipeIngredient1.Add(new RecipeIngredient
+            {
+                Ingredient = "lamb meat",
+                Quantity = 200,
+                UnitOfMeasurement = "gms"
+            });
+
+            recipeIngredient1.Add(new RecipeIngredient
+            {
+                Ingredient = "onion",
+                Quantity = 100,
+                UnitOfMeasurement = "gms"
+            });
+
+            recipeIngredient1.Add(new RecipeIngredient
+            {
+                Ingredient = "tomato",
+                Quantity = 100,
+                UnitOfMeasurement = "gms"
+            });
+
+            recipeIngredient1.Add(new RecipeIngredient
+            {
+                Ingredient = "curry powder",
+                Quantity = 2,
+                UnitOfMeasurement = "tbsp"
+            });
+
+            recipeIngredient1.Add(new RecipeIngredient
+            {
+                Ingredient = "coconut milk",
+                Quantity = 1,
+                UnitOfMeasurement = "cup"
+            });
+
+            recipeIngredient1.Add(new RecipeIngredient
+            {
+                Ingredient = "chopped coriander",
+                Quantity = 1,
+                UnitOfMeasurement = "handful"
+            });
+
+           
+
+            List<RecipeStep> recipeSteps1 = new List<RecipeStep>();
+            recipeSteps1.Add(new RecipeStep
+            {
+                StepNumber = 1,
+                TextInstructions = "pour oil add whole garam masala",
+                MediaFileUrl = "https://veenaazmanov.com/wp-content/uploads/2020/04/Slow-Cooked-Lamb-Curry-Progress-Pictures-1.jpg"
+            });
+            recipeSteps1.Add(new RecipeStep
+            {
+                StepNumber = 2,
+                TextInstructions = "saute onion and tomato till it turns soft",
+                MediaFileUrl = "https://veenaazmanov.com/wp-content/uploads/2020/04/Slow-Cooked-Lamb-Curry-Recipe-Indian2-2.jpg"
+            });
+            recipeSteps1.Add(new RecipeStep
+            {
+                StepNumber = 3,
+                TextInstructions = "add in meat adjust salt and add curry powder",
+                MediaFileUrl = "https://veenaazmanov.com/wp-content/uploads/2020/04/Slow-Cooked-Lamb-Curry-Progress-Pictures-2.jpg"
+            });
+            recipeSteps1.Add(new RecipeStep
+            {
+                StepNumber = 4,
+                TextInstructions = "cook till the meat is soft and tender and then add coconut milk cook for 5 mins and add coriander",
+                MediaFileUrl = "https://veenaazmanov.com/wp-content/uploads/2020/04/Slow-Cooked-Lamb-Curry-Progress-Pictures-5.jpg"
+            });
+
+            List<RecipeTag> recipeTag1 = new List<RecipeTag>();
+
+            recipeTag1.Add(new RecipeTag
+            {
+                IsAllergenTag = false,
+                Tag = new Tag
+                {
+                    TagName = "curry",
+                    Warning = ""
+                }
+            });
+            recipeTag1.Add(new RecipeTag
+            {
+                IsAllergenTag = false,
+                Tag = new Tag
+                {
+                    TagName = "lamb",
+                    Warning = ""
+                }
+            });
+            recipeTag1.Add(new RecipeTag
+            {
+                IsAllergenTag = false,
+                Tag = new Tag
+                {
+                    TagName = "Indian spicies",
+                    Warning = ""
+                }
+            });
+
+
+            db.Recipes.Add(new Recipe
+            {
+                UserId = user.Id,
+                Title = "Lamb Curry",
+                Description = "Spicy Indian curry",
+                DateCreated = new DateTime(2020, 9, 9, 8, 30, 52),
+                DurationInMins = 60,
+                Calories = 500,
+                IsPublished = true,
+                MainMediaUrl = "https://veenaazmanov.com/wp-content/uploads/2020/04/Slow-Cooked-Lamb-Curry-Recipe-Indian14.jpg",
+                RecipeIngredients = recipeIngredient1,
+                RecipeSteps = recipeSteps1,
+                RecipeTags = recipeTag1
+            });
+
+            db.SaveChanges();
+
         }
 
         protected void AddTags()
@@ -732,7 +1102,125 @@ namespace ADProject.DbSeeder
 
             db.SaveChanges();
 
+            List<RecipeIngredient> recipeIngredientsquid = new List<RecipeIngredient>();
 
+
+            recipeIngredientsquid.Add(new RecipeIngredient
+            {
+                Ingredient = "Squid",
+                Quantity = 2,
+                UnitOfMeasurement = "squid"
+            });
+
+            recipeIngredientsquid.Add(new RecipeIngredient
+            {
+                Ingredient = "salt,sugar,pepper",
+                Quantity = .25,
+                UnitOfMeasurement = "tsp"
+            });
+
+            recipeIngredientsquid.Add(new RecipeIngredient
+            {
+                Ingredient = " leek ",
+                Quantity = 15,
+                UnitOfMeasurement = "gms"
+            });
+
+            recipeIngredientsquid.Add(new RecipeIngredient
+            {
+                Ingredient = "red capsicum and celery each ",
+                Quantity = 30,
+                UnitOfMeasurement = "gms"
+            });
+
+            recipeIngredientsquid.Add(new RecipeIngredient
+            {
+                Ingredient = "garlic",
+                Quantity = 1,
+                UnitOfMeasurement = "clove"
+            });
+
+            recipeIngredientsquid.Add(new RecipeIngredient
+            {
+                Ingredient = "red chilly",
+                Quantity = 8,
+                UnitOfMeasurement = "whole"
+            });
+
+            recipeIngredientsquid.Add(new RecipeIngredient
+            {
+                Ingredient = "oyster sauce, Worcestershire sauce,light soy sauce,black vinegar",
+                Quantity = 1,
+                UnitOfMeasurement = "tbsp"
+            });
+            recipeIngredientsquid.Add(new RecipeIngredient
+            {
+                Ingredient = "chicken stock granules",
+                Quantity = .5,
+                UnitOfMeasurement = "tsp"
+            });
+            recipeIngredientsquid.Add(new RecipeIngredient
+            {
+                Ingredient = "chicke stock",
+                Quantity = 125,
+                UnitOfMeasurement = "ml"
+            });
+
+            List<RecipeStep> recipeStepssquid = new List<RecipeStep>();
+            recipeStepssquid.Add(new RecipeStep
+            {
+                StepNumber = 1,
+                TextInstructions = "Skin the squid and score the inner part to form criss-cross pattern. Season with salt, sugar and pepper.",
+                MediaFileUrl = "https://c8.alamy.com/comp/2AN63CK/raw-squid-on-ice-with-salad-spices-lemon-garlic-on-white-plate-background-fresh-squids-octopus-or-cuttlefish-for-cooked-food-at-restaurant-or-seafoo-2AN63CK.jpg"
+            });
+            recipeStepssquid.Add(new RecipeStep
+            {
+                StepNumber = 2,
+                TextInstructions = "In a wok or large enough saucepan, bring water to boil and scald the squid for just a few seconds. Remove and drain well. Cut into bite sizes.",
+                MediaFileUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0Q6hrXXQZ5ISNAu4UfqGDcdJQwYvwzXtgZQ&usqp=CAU"
+            });
+            recipeStepssquid.Add(new RecipeStep
+            {
+                StepNumber = 3,
+                TextInstructions = "In a wok, heat the sesame oil and fry the garlic until lightly coloured. Add ginger and dried chillies, and fry until aromatic. Add the celery, leek and capsicum. Toss and fry briefly for 10 to 20 seconds.",
+               
+            });
+            recipeStepssquid.Add(new RecipeStep
+            {
+                StepNumber = 4,
+                TextInstructions = "Stir in the sauce ingredients and bring to a quick boil. Once the sauce thickens, return squid to the wok and stir-fry over high heat for a few seconds. Dish out and serve.",
+                MediaFileUrl = "https://img-global.cpcdn.com/recipes/7377ab64d09dfcb2/751x532cq70/spicy-squid-masala-fry-recipe-main-photo.jpg"
+            });
+
+            List<RecipeTag> recipeTagsquid = new List<RecipeTag>();
+
+            recipeTagsquid.Add(new RecipeTag
+            {
+                IsAllergenTag = true,
+                Tag = new Tag
+                {
+                    TagName = "seafood",
+                    Warning = "SeaFood Allergy"
+                }
+            });
+            recipeTagsquid.Add(new RecipeTag
+            {
+                IsAllergenTag = false,
+                Tag = new Tag
+                {
+                    TagName = "spicy",
+                    Warning = ""
+                }
+            });
+            recipeTagsquid.Add(new RecipeTag
+            {
+                IsAllergenTag = false,
+                Tag = new Tag
+                {
+                    TagName = "squid",
+                    Warning = ""
+                }
+            });
             db.Recipes.Add(new Recipe
             {
                 UserId = user.Id,
@@ -743,9 +1231,9 @@ namespace ADProject.DbSeeder
                 Calories = 600,
                 IsPublished = true,
                 MainMediaUrl = "https://singaporebeauty.com/wp-content/uploads/2017/10/dm-chicken-squid-close-up.jpg",
-                //RecipeIngredients = recipeIngredient,
-                //RecipeSteps = recipeSteps,
-                //RecipeTags = recipeTag
+                RecipeIngredients = recipeIngredientsquid,
+                RecipeSteps = recipeStepssquid,
+                RecipeTags = recipeTagsquid
             });
 
             db.SaveChanges();
@@ -948,37 +1436,21 @@ namespace ADProject.DbSeeder
                 }
             });
 
-            db.Groups.Add(new Group
-            {
-                GroupName = "Hololive Fans",
-                GroupPhoto = "https://user-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/1369026/124086_244660.png",
-                Description = "For all hololive fans",
-                DateCreated = new DateTime(2008, 5, 1, 8, 30, 52),
-                IsPublished = true,
-                GroupTags = groupTag
-            });
+           
 
             db.SaveChanges();
 
             db.Groups.Add(new Group
             {
-                GroupName = "Esther's fan club (Enjoy a picture of bandori, <3)",
-                GroupPhoto = "https://pbs.twimg.com/media/Dki21sEU4AAKlB-?format=jpg&name=medium",
-                Description = "Yuen Kwan is her no.1 fan",
+                GroupName = "Cake Lover",
+                GroupPhoto = "https://scontent.fsin2-1.fna.fbcdn.net/v/t1.0-9/41755292_838712536518336_4483106259637108736_n.jpg?_nc_cat=110&ccb=3&_nc_sid=09cbfe&_nc_ohc=wb4KQInKMPwAX-HZrmX&_nc_ht=scontent.fsin2-1.fna&oh=b32f73526238c83ba946405b53e2a74d&oe=6050FC74",
+                Description = "Cakes make me Happy",
                 DateCreated = new DateTime(2018, 5, 1, 8, 30, 52),
                 IsPublished = true,
                 GroupTags = groupTag
             });
 
-            db.Groups.Add(new Group
-            {
-                GroupName = "Love Live",
-                GroupPhoto = "https://static.gojinshi.com/wp-content/uploads/2020/07/Love-Live-School-Idol-Project-Watch-Order-Guide.jpg",
-                Description = "test",
-                DateCreated = new DateTime(2018, 5, 1, 8, 30, 52),
-                IsPublished = true,
-                GroupTags = groupTag
-            });
+            
 
             db.SaveChanges();
 
@@ -1005,7 +1477,7 @@ namespace ADProject.DbSeeder
             db.Groups.Add(new Group
             {
                 GroupName = "Korean Cuisine",
-                GroupPhoto = "https://christieathome.com/wp-content/uploads/2020/12/Jajangmyeon3-scaled.jpg",
+                GroupPhoto = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRss_o33i1x0K_OzS6IqnF4G4tFkzWwVmGgBg&usqp=CAU",
                 Description = "Oppa Saranghae",
                 DateCreated = new DateTime(2012, 5, 15, 8, 30, 52),
                 IsPublished = true,
